@@ -29,4 +29,12 @@ protected class MySetElement <T>{
         return true;
    }
 
+   public int size() {
+       if(next == null) {
+           return 1;
+       } else {
+            return 1 + next.size();
+       }
+   }
+
 }

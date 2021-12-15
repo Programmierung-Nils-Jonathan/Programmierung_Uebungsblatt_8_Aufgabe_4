@@ -20,4 +20,19 @@ protected class MyAbstractSet <T> implements java.util.Iterator, java.util.Set {
     public <T> T[] toArray(T[] a) {
         throw java.lang.UnsupportedOperationException;
     }
+
+    @Override
+    public boolean contains(T compareObject) {
+        return head.contains(compareObject);
+    }
+
+    @Override
+    public boolean containsAll(T compareObject) {
+        return head.containsAll(compareObject);
+    }
+
+    @Override
+    public int size() {
+        return head.size();
+    }
 }
