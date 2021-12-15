@@ -27,7 +27,7 @@ protected class MyAbstractSet <T> implements java.util.Iterator, java.util.Set {
     }
 
     @Override
-    public boolean containsAll(T compareObject) {
+    public boolean containsAll(T[] compareObject) {
         return head.containsAll(compareObject);
     }
 

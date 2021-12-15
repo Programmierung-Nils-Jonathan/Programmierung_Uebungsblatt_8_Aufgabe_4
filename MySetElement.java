@@ -52,4 +52,10 @@ protected class MySetElement <T>{
         }
    }
 
+   void add(T addObject) {
+       if(!this.contains(addObject)) {
+            this.next = new MySetElement<MySetElement.T>(this.next, addObject) ;
+       }
+   }
+
 }
