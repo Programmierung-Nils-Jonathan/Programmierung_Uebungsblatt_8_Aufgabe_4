@@ -1,6 +1,6 @@
 package mySets;
 
-public class mySetElement <T>{
+protected class mySetElement <T>{
     mySetElement <T> next;
     T value;
 
