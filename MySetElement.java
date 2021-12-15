@@ -58,4 +58,9 @@ protected class MySetElement <T>{
        }
    }
 
+   void clear() {
+       this.value = null;
+       this.next = null;
+   }
+
 }

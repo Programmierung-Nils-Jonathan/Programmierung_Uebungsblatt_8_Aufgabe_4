@@ -22,4 +22,9 @@ public class MyMutableSet extends MyAbstractSet implements java.util.Set {
         }
     }
 
+    @Override
+    void clear() {
+        this.head.clear();
+    }
+
 }
