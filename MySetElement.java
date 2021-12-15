@@ -12,7 +12,7 @@ protected class MySetElement <T>{
    public boolean contains(T compareObject) {
        if(next == null){
             return false;
-       } else if(value == compareObject) {
+       } else if(this.value.equals(compareObject)) {
             return true;
        } else {
            return next.contains();
@@ -62,5 +62,15 @@ protected class MySetElement <T>{
        this.value = null;
        this.next = null;
    }
+
+    void remove(T removeObject) {
+        if (this.value.equals(removeObject)) {
+            return;
+        } else if (this.next == null) {
+            return;
+        } else {
+            next.remove(removeObject);
+        }
+    }
 
 }

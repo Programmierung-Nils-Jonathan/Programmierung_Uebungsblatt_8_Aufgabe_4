@@ -27,4 +27,8 @@ public class MyMutableSet extends MyAbstractSet implements java.util.Set {
         this.head.clear();
     }
 
+    @Override
+    void remove(T removeObject) {
+        this.head.remove(removeObject);
+    }
 }
