@@ -30,7 +30,10 @@ protected class MySetElement <T>{
    }
 
    public int size() {
-       if(next == null) {
+       if(next != null) {
+           if(value == null) {
+               return 0;
+           }
            return 1;
        } else {
             return 1 + next.size();
