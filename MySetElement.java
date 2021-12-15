@@ -40,4 +40,8 @@ protected class MySetElement <T>{
        }
    }
 
+   public boolean isEmpty() {
+        return this.size() == 0;
+   }
+
 }
