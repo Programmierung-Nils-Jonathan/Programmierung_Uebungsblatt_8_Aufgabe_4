@@ -1,8 +1,8 @@
 package mySets;
 
-public class MyMutableSet extends MyAbstractSet implements java.util.Set {
+protected class MyMutableSet extends MyAbstractSet implements java.util.Set {
 
-    public MyMutableSet() {
+    MyMutableSet() {
         super(null);
     }
 
@@ -18,7 +18,7 @@ public class MyMutableSet extends MyAbstractSet implements java.util.Set {
     @Override
     void addAll(T[] addObjects) {
         for(int i = 0; i < addObjects.length; i++) {
-            this.head.add(addObject);
+            this.head.add(addObject[i]);
         }
     }
 
@@ -30,5 +30,12 @@ public class MyMutableSet extends MyAbstractSet implements java.util.Set {
     @Override
     void remove(T removeObject) {
         this.head.remove(removeObject);
+    }
+
+    @Override
+    void removeAll(T[] removeObjects) {
+        for(int i = 0; i < removeObjects.length; i++) {
+            this.head.remove(removeObjects[i]);
+        }
     }
 }
