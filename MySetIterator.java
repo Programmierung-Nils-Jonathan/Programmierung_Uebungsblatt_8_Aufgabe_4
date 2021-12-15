@@ -2,7 +2,7 @@ package mySets;
 
 import java.util.Iterator;
 
-protected class mySetIterator <T>implements java.util.Iterator{
+protected class MySetIterator <T> implements java.util.Iterator {
     mySetElement<T> current;
     public mySetIterator(mySetElement<T> pCurrent){
         this.current = pCurrent;
