@@ -44,4 +44,12 @@ protected class MySetElement <T>{
         return this.size() == 0;
    }
 
+   String toString() {
+        if(next == null) {
+            return this.value;
+        } else {
+            return this.value + "," + this.next.toString();
+        }
+   }
+
 }

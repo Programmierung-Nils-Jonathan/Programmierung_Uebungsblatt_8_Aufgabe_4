@@ -35,4 +35,8 @@ protected class MyAbstractSet <T> implements java.util.Iterator, java.util.Set {
     public int size() {
         return head.size();
     }
+
+    String toString() {
+        return "{" + head.toString() + "}";
+    }
 }
