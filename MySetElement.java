@@ -1,10 +1,10 @@
 package mySets;
 
 protected class MySetElement <T>{
-    mySetElement <T> next;
+    MySetElement <T> next;
     T value;
 
-   public mySetElement(mySetElement <T> pNext, T pValue){
+   public MySetElement(mySetElement <T> pNext, T pValue){
        this.next = pNext;
        this.value = pValue;
    }
