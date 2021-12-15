@@ -1,0 +1,26 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Aufgabe 7
+    command: make
+  - name: Javadoc
+    command: npx nodemon --exec 'make doc' --watch . -e java
+  - name: Javadoc Server
+    command: |
+      cd doc
+      python3 -m http.server 3000
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: true
+    addBadge: false
