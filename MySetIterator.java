@@ -2,9 +2,9 @@ package mySets;
 
 import java.util.Iterator;
 
-protected class MySetIterator <T> implements java.util.Iterator {
-    mySetElement<T> current;
-    public mySetIterator(mySetElement<T> pCurrent){
+class MySetIterator <T> implements java.util.Iterator {
+    MySetElement<T> current;
+    public MySetIterator(MySetElement<T> pCurrent){
         this.current = pCurrent;
     }
     @Override
@@ -21,8 +21,8 @@ protected class MySetIterator <T> implements java.util.Iterator {
     }
 
     @Override
-    public mySetElement<T> next() {
-        mySetElement<T> neu = current;
+    public MySetElement<T> next() {
+        MySetElement<T> neu = current;
         try{
             current = current.next;
         }
@@ -39,3 +39,4 @@ protected class MySetIterator <T> implements java.util.Iterator {
         throw new java.lang.UnsupportedOperationException();
     }
 }
+
