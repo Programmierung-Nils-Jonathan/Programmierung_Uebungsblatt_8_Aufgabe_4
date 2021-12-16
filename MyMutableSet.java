@@ -87,7 +87,7 @@ abstract class MyMutableSet<T> extends MyAbstractSet<T> implements java.util.Set
                 }
 
                 @Override
-                public T next() {
+                public MyMutableSet<T> next() {
                     return null;
                 }
 
