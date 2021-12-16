@@ -227,4 +227,9 @@ abstract class MyMutableSet<T> extends MyAbstractSet<T> implements java.util.Set
         {
             return null;
         }
+        public  MyMinimalSet <T> freezeAndClear () {
+                MyMinimalSet <T> res = new  MyImmutableSet <>(head);
+                clear ();
+                return  res;
+        }
 }
