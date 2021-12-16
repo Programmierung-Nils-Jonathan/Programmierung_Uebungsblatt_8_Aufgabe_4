@@ -1,42 +1,78 @@
 package mySets;
 
-protected class MyAbstractSet <T> implements java.util.Iterator, java.util.Set {
+import java.util.Collection;
+
+abstract class MyAbstractSet <T> implements java.util.Iterator<T> {
+
     MySetElement<T> head;
-
     MyAbstractSet(MySetElement<T> set) {
-        head = set;
+        this.head = set;
     }
 
-    @Override
+
     public MySetIterator iterator() {
+        return  new  MySetIterator <>(head);
     }
 
-    @Override
+
     public Object[] toArray() {
-        throw java.lang.UnsupportedOperationException;
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override
+
     public <T> T[] toArray(T[] a) {
-        throw java.lang.UnsupportedOperationException;
+        throw new java.lang.UnsupportedOperationException();
     }
 
-    @Override
-    public boolean contains(T compareObject) {
-        return head.contains(compareObject);
+
+    public boolean contains(Object compareObject) {
+        for (MyAbstractSet<T> it = this; it.hasNext(); ) {
+            T t = it.next();
+            if (t.equals(compareObject)) {
+                return  true;
+            }
+        }
+        return  false;
     }
 
-    @Override
-    public boolean containsAll(T[] compareObject) {
-        return head.containsAll(compareObject);
+
+
+    public  boolean  containsAll(Collection<?> c) {
+        for (Object o: c) {
+            if (! contains(o)) {
+                return  false;
+            }
+        }
+        return  true;
     }
 
-    @Override
+
     public int size() {
-        return head.size();
+        int  res = 0;
+        for (MyAbstractSet<T> it = this; it.hasNext(); ) {
+            T t = it.next();
+            res ++;
+        }
+        return  res;
     }
 
-    String toString() {
-        return "{" + head.toString() + "}";
+    public String toString() {
+        String  res = "{";
+        MySetElement <T> current = head;
+        while (current  != null) {
+            res +=  current.value;
+            if (current.next != null) res += ", ";
+            current = current.next;
+        }
+        return  res + "}";
+    }
+    @Override
+    public boolean equals ( Object other ) {
+        if ( other instanceof MyAbstractSet <? >) {
+            return this . containsAll (( Collection <? >) other )
+                    && this . size () == (( MyAbstractSet <? >) other ). size ();
+        }
+        return false ;
     }
 }
+
